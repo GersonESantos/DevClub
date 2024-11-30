@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor De Moeda</title>
+</head>
+<body>
+    <h1>Conversor De Moeda</h1>
+    <input type="number" placeholder="Digite o valor">
+    <select name="moeda" id="moeda">
+        <option value="real">Real</option>
+        <option value="dolar">Dolar</option>
+        <!--<option value="euro">Euro</option>-->
+    </select>
+    <select>
+        <option value="dolar">Dolar</option>
+        <!--<option value="euro">Euro</option>-->
+        <option value="real">Real</option>
+    </select>
+    <button >
+            Converter
+    </button>
+</body>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: aquamarine;
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    h1{
+        text-align: center;
+    }
+    input, select, button{
+        margin: 10px auto ;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box ;
+    }
+    /*button{
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin: 0 auto;
+        margin-top: 10px;
+        padding: 10px;
+    }*/
+</style>
+<script>
+    const input = document.querySelector('input');
+    const select = document.querySelector('select');
+    const select2 = document.querySelectorAll('select')[1];
+    const button = document.querySelector('button');
+
+    button.addEventListener('click', function(){
+        const valor = input.value;
+        const moeda = select.value;
+        const moeda2 = select2.value;
+        const resultado = document.createElement('p');
+        resultado.textContent = `O valor de ${valor} em ${moeda} é igual a ${valor * 5.5} em ${moeda2}`;
+        document.body.appendChild(resultado);
+    });
+</script>
+</html>

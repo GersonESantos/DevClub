@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor De Moeda</title>
+</head>
+<body>
+    <h1>Conversor De Moeda</h1>
+    <input id="input" type="number" placeholder="Digite o valor">
+    <select id="origem">
+        <option value="real">Real</option>
+        <option value="dolar">Dolar</option>
+        <!--<option value="euro">Euro</option>-->
+    </select>
+    <select id="destino">
+        <option value="dolar">Dolar</option>
+        <!--<option value="euro">Euro</option>-->
+        <option value="real">Real</option>
+    </select>
+    <button id="botao">
+            Converter
+    </button>
+</body>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: aquamarine;
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    h1{
+        text-align: center;
+    }
+    input, select, button{
+        margin: 10px auto ;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box ;
+    }
+    /*button{
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin: 0 auto;
+        margin-top: 10px;
+        padding: 10px;
+    }*/
+</style>
+<script>
+    let input = document.getElementById('input');
+    let origem = document.getElementById('origem');
+    let destino = document.getElementById('destino');
+    let botao = document.getElementById('botao');
+
+    botao.addEventListener('click', converter);
+    function converter(){
+        /*alert("Clicou"); saber se o botão está funcionando*/
+        /*alert(input.value); saber se o input está funcionando*/
+        /*alert(origem.value); saber se o select está funcionando*/
+        /*alert(destino.value); /*saber se o select está funcionando*/
+        if(origem.value == 'real' && destino.value == 'dolar'){
+            /*alert(input.value/5.8); saber se o cálculo está funcionando*/
+            let valor = input.value;
+            let resultado = document.createElement('p');
+            resultado.textContent = `O valor de R$ ${valor} em Dolar é igual a US$ ${valor / 5.5}`;
+            document.body.appendChild(resultado);
+        }else if(origem.value === 'dolar' && destino.value === 'real'){
+            /*alert(input.value*5.8); saber se o cálculo está funcionando*/
+            let valor = input.value;
+            let resultado = document.createElement('p');
+            resultado.textContent = `O valor de US$ ${valor} em Real é igual a R$ ${valor * 5.5}`;
+            document.body.appendChild(resultado);
+            resultado.textContent = `O valor de ${valor} em ${moeda} é igual a ${valor * 5.5} em ${moeda2}`;
+            document.body.appendChild(resultado);
+        } else if(origem.value == destino.value){
+            alert('Escolha moedas diferentes');
+        }   
+    }
+</script>
+</html>
